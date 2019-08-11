@@ -1,6 +1,7 @@
 // aqui exportaras las funciones que necesites
 const goHome = () =>{
   location.hash = '/home';
+  
 }
 
 // Ingreso por Correo y contraseña //
@@ -10,7 +11,7 @@ const emailPasswordLogIn = (emailLogin,passwordLogIn) => {
   const password= passwordLogIn.value;
 
   firebase.auth().signInWithEmailAndPassword(email, password)
-  .then(() => goingProgile())
+  .then(() => goHome())
   .catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
@@ -25,8 +26,8 @@ const emailPasswordLogIn = (emailLogin,passwordLogIn) => {
 const register = (nameRegister,emailRegister,passwordRegister,passwordConfirm) => {
   console.log('funciona formulario de ingreso');
   const nameUser= nameRegister.value;
-  const emailUser= emailRegister.value;
-  const passUser= passwordRegister.value;
+  const email= emailRegister.value;
+  const password= passwordRegister.value;
   const confirmPassUser=passwordConfirm.value; 
 
   if (nameUser === ''){
@@ -46,18 +47,18 @@ const register = (nameRegister,emailRegister,passwordRegister,passwordConfirm) =
     return;
   }
 
-// firebase.auth().createUserWithEmailAndPassword(email, password)
-//     .then(() => goHome())
-//     .catch(function(error) {
-//     // Handle Errors here.
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // ...
-//     console.log(email);
-//     console.log(password);
+firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(() => goHome())
+    .catch(function(error) {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ...
+    console.log(email);
+    console.log(password);
 
-//     });
-// email - password.html
+    });
+email - password.html
 }
 
 

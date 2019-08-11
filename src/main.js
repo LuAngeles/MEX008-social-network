@@ -36,7 +36,7 @@ const router = async () => {    // function always returns a promise
     //load view element
     const header = document.getElementById('header-container');
     const content = document.getElementById('content');
-    const aside = document.getElementById('aside');
+    const aside = document.getElementById('aside-container');
 
     let request = Utils.parseRequestURL();
     // Parse the URL and if it has an id part, change it with the string ":id"
@@ -51,7 +51,7 @@ const router = async () => {    // function always returns a promise
         header.innerHTML = await Navbar.render(); // wait till the promise resolves
         await Navbar.after_render();
     
-        aside.innerHTML = await Aside.render();
+        aside.innerHTML = await Home.render();
         await Aside.after_render();
 
     }

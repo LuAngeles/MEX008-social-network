@@ -1,7 +1,7 @@
 let Home = {
     render : async () => {
         let view = `
-        <p>Hola home </p>
+        <p>Hola soy home </p>
         `
         return view
     }
