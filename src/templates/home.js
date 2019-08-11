@@ -1,7 +1,8 @@
 let Home = {
     render : async () => {
         let view = `
-        <p>Hola soy home </p>
+        <section class="all-sections">
+        </section>        
         `
         return view
     }

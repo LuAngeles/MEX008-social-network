@@ -1,26 +1,4 @@
 // aqui exportaras las funciones que necesites
-const goHome = () =>{
-  location.hash = '/home';
-  
-}
-
-// Ingreso por Correo y contraseña //
-const emailPasswordLogIn = (emailLogin,passwordLogIn) => {
-  console.log('Funciona correo y contraseña');
-  const email= emailLogin.value;
-  const password= passwordLogIn.value;
-
-  firebase.auth().signInWithEmailAndPassword(email, password)
-  .then(() => goHome())
-  .catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
-  });
-}
-
-
 
 // Ingreso por formulario //
 const register = (nameRegister,emailRegister,passwordRegister,passwordConfirm) => {
@@ -246,6 +224,6 @@ function initApp() {
  
 window.emailPasswordLogIn = emailPasswordLogIn;
 window.register = register;
-//window. googleSignIn = googleSignIn;
-//window. facebookSignIn = facebookSignIn;
+window. googleSignIn = googleSignIn;
+window. facebookSignIn = facebookSignIn;
   
